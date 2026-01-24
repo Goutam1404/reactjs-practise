@@ -23,7 +23,7 @@ function Button({ text, color, size, disabled, onClick }) {
 export const BasicProps = () => {
   const [count,setcount]=useState(0);
   return (
-    <section className="p-8 bg-white rounded-xl shadow-2xl">
+    <section className="p-8 bg-gray-100  rounded-xl shadow-2xl">
       <h2 className="text-3xl font-bold mb-4 text-gray-700">BasicProps</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
@@ -60,7 +60,7 @@ export const BasicProps = () => {
       {/* Different sizes */}
       <div className="space-y-4">
         <h3 className="font-bold uppercase mt-4">Different Sizes</h3>
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-wrap gap-3 items-center">
           <Button
             text="Primary button"
             color="primary"
@@ -70,7 +70,8 @@ export const BasicProps = () => {
           <Button
             text="Secondary button"
             color="secondary"
-            onClick={() => setcount(count + 1)}
+            size={"large"}
+            onClick={() => setcount(count + 2)}
           />
           <Button
             text="Success button"
@@ -81,12 +82,14 @@ export const BasicProps = () => {
             text="Danger button"
             color="danger"
             size={"large"}
-            onClick={() => setcount(count + 1)}
+            onClick={() => setcount(count -1)}
           />
         </div>
       </div>
       <div className="space-y-4">
-        <h3 className="font-bold uppercase mt-4">Buttons enabled and disabled</h3>
+        <h3 className="font-bold uppercase mt-4">
+          Buttons enabled and disabled
+        </h3>
         <div className="flex flex-wrap gap-3">
           <Button
             text="Primary button"
@@ -97,22 +100,23 @@ export const BasicProps = () => {
           <Button
             text="Secondary button"
             color="secondary"
-            onClick={() => setcount(count + 1)}
+            onClick={() => setcount(count / 5)}
           />
           <Button
             text="Success button"
             color="success"
-            onClick={() => setcount(count + 1)}
+            onClick={() => setcount(count * 5)}
           />
           <Button
             text="Danger button"
             color="danger"
+            disabled={true}
             onClick={() => setcount(count + 1)}
           />
         </div>
       </div>
 
-      <div className="mt-6 p-4 bg-blue-50 rounded-lg">
+      <div className="mt-6 p-4 bg-blue-100 rounded-lg">
         <p className="text-lg font-medium text-gray-700">
           Click count: <span className="text-blue-500 font-bold">{count}</span>
         </p>
