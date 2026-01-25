@@ -57,11 +57,10 @@ const QueueForm = ({ onAdd }) => {
         <span
           className={`${
             urgent
-              ? "bg-lime-600 hover:bg-lime-700"
+              ? "bg-lime-300 hover:bg-lime-500 text-gray-700"
               : " bg-gray-500 hover:bg-gray-600"
           }  px-3 py-1 rounded-full  transition duration-200 cursor-pointer font-semibold text-gray-200`}
-          
-          onClick={() => setUrgent((prev)=>!prev)}
+          onClick={() => setUrgent((prev) => !prev)}
         >
           URGENT
         </span>

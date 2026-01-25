@@ -35,7 +35,7 @@ const App = () => {
   };
   return (
     <>
-      <div className="w-full bg-gray-700 py-5">
+      <div className="w-full min-h-screen bg-gray-700 py-5">
         <header className="text-center mb-5">
           <div>
             <h1 className="font-bold text-4xl text-violet-400 hover:text-violet-500 transition-all duration-200 p-2">
