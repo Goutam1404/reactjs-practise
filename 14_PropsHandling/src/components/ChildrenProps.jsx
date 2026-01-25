@@ -90,7 +90,7 @@ export const ChildrenProps = () => {
                 hours. Please upgrade your account to continue using all
                 features
               </p>
-              <button className="mt-4 px-2 py-2 font-medium rounded bg-gradient-to-r from-gray-700 to bg-neutral-500 text-gray-200 hover:from-gray-800 hover:to-neutral-600 hover:text-gray-200 transition-all duration-200 cursor-pointer shadow-md">
+              <button className="mt-4 px-3 py-2 font-medium rounded-full transition duration-200 bg-linear-to-r from-gray-700 to bg-neutral-500 text-gray-200 hover:from-gray-800 hover:to-neutral-600 hover:text-gray-200   cursor-pointer shadow-md">
                 Upgrade Now ↗
               </button>
             </Card>

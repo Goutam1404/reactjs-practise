@@ -1,5 +1,6 @@
 import React from 'react'
-import { BasicProps, ChildrenProps, RefProps, ComplexProps, ThemeToggler } from './components/index.js' 
+import { BasicProps, ChildrenProps,  ComplexProps, ThemeToggler } from './components/index.js' 
+import { ThemeProvider, useTheme } from './components/ThemeToggler.jsx'
 
 function Navigation(){
   const isDark=true
@@ -36,7 +37,7 @@ function Navigation(){
 }
 
 function AppContent(){
-  const isDark=true;
+  const { isDark } = useTheme();
   return (
     <>
       <div className={`min-h-screen bg-gray-900 `}>
@@ -63,9 +64,6 @@ function AppContent(){
             <div id="ChildrenProps" className="scroll-mt-200">
               <ChildrenProps />
             </div>
-            <div id="RefProps" className="scroll-mt-200">
-              <RefProps />
-            </div>
             <div id="ComplexProps" className="scroll-mt-200">
               <ComplexProps />
             </div>
@@ -83,9 +81,12 @@ function AppContent(){
 }
 
 function App() {
+ 
   return (
     <>
-      <AppContent />
+      <ThemeProvider>
+        <AppContent />
+      </ThemeProvider>
     </>
   );
 }
