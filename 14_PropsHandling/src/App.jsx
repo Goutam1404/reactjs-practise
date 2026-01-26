@@ -40,7 +40,7 @@ function AppContent(){
   const { isDark } = useTheme();
   return (
     <>
-      <div className={`min-h-screen bg-gray-900 `}>
+      <div className={`min-h-screen bg-gray-900 ${isDark?"bg-gray-900":'bg-linear-to-br from-blue-50 to-purple-50'} `}>
         <Navigation />
         <div className="container mx-auto py-8 px-4">
           <header
