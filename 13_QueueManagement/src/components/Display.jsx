@@ -13,7 +13,11 @@ const Display = ({ queue, onUpdate , onRemove}) => {
   }
   return (
     <>
-      <div className="p-6 rounded-xl bg-gray-950 h-fit">
+      <div
+        className={`p-6 rounded-xl  ${
+          isDark ? "bg-gray-950" : "bg-gray-700"
+        } h-fit`}
+      >
         <h2 className="font-bold mb-2 text-xl md:text-2xl">Current Queue</h2>
         <div>
           {queue.length === 0 ? (
@@ -25,20 +29,43 @@ const Display = ({ queue, onUpdate , onRemove}) => {
               {queue.map((customer) => (
                 <div
                   key={customer.id}
-                  className="bg-gray-900 h-fit mt-5 max-w-full p-3 flex  justify-between"
+                  className={`${
+                    isDark ? "bg-gray-900" : "bg-gray-400"
+                  } h-fit mt-5 max-w-full p-3 flex  justify-between rounded `}
                 >
                   <div className="my-2">
-                    <div className="my-2 flex flex-row justify-end w-full gap-4 items-center ">
-                      <span className='font-semibold md:text-xl '>{customer.name.trim().toUpperCase()}</span>
+                    <div className="my-2 flex flex-row w-full gap-4 items-center ">
+                      <span
+                        className={`md:text-xl ${
+                          isDark ? "font-semibold " : "text-gray-800 font-bold"
+                        }`}
+                      >
+                        {customer.name.trim().toUpperCase()}
+                      </span>
 
                       {customer.urgent && (
-                        <div className="bg-lime-300 px-3 py-1 rounded-full border-2 border-yellow-500 text-neutral-800 text-sm font-medium">
-                           URGENT
+                        <div
+                          className={`${
+                            isDark
+                              ? "bg-lime-300 border-yellow-500"
+                              : "bg-orange-400"
+                          } px-3 py-1 rounded-full border-2  text-neutral-800 text-sm font-medium`}
+                        >
+                          URGENT
                         </div>
                       )}
                     </div>
-                    <p className="my-1">{customer.service}</p>
-                    <span style={{ color: getStatusColour(customer.status),  }} className=''>
+                    <p
+                      className={`my-1 ${
+                        isDark ? "font-medium" : "text-gray-800 font-bold"
+                      }`}
+                    >
+                      {customer.service}
+                    </p>
+                    <span
+                      style={{ color: getStatusColour(customer.status) }}
+                      className={`${isDark ? "font-medium" : "font-bold"}`}
+                    >
                       {customer.status}
                     </span>
                   </div>
