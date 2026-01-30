@@ -68,6 +68,7 @@ export function useCart() {
     );
   };
 
+  //it memoizes the result of calculation so that it prevent unnecessary recalculations between rerender
   const total = useMemo(() => {
     return Number(
       cart
