@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-
 const BlogInput = ({ onAdd }) => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
@@ -21,6 +20,9 @@ const BlogInput = ({ onAdd }) => {
     setTitle('');
     setContent('');
   };
+
+  
+
   return (
     <>
       

@@ -44,7 +44,7 @@ function Main() {
   // };
   return (
     <div
-      className={`w-full min-h-screen ${
+      className={` min-h-screen ${
         isDark
           ? "bg-linear-to-br from-neutral-900 to-neutral-800 "
           : " bg-linear-to-br from-blue-200 to-purple-100"
@@ -69,7 +69,7 @@ function Main() {
         <ThemeToggler />
       </div>
 
-      <main className=" my-5 mx-10 md:mx-15 h-max grid md:grid-cols-3 gap-10 duration-200 transition-all">
+      <main className=" my-5 mx-4 md:mx-15 h-max grid md:grid-cols-3 gap-10 duration-200 transition-all">
         <div className="max-w-full sm:w-xl md:col-span-1">
           <QueueForm onAdd={addToQueue} />
         </div>
